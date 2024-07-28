@@ -1,4 +1,4 @@
-# Tanal is Tempo Analyzer for osu
+# Tanal is Tempo Analyzer for osu mappers
 Tanal provides a web interface to analyze BPM in different ways
 ## Requirements
 * python 3.12, 3.11 (other versions most likely work but are not tested)
