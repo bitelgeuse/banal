@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/logo.png" alt="Banal logo" width="50%">
+  <img src="assets/logo.png" alt="Banal logo" width="25%">
 </div>
 
 # Banal - 🎶 BPM Analyzer
