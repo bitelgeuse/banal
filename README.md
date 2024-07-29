@@ -19,8 +19,8 @@ Banal provides a web interface to analyze BPM.
 
 `setup.py` script create virtual environment and install python packages.
 ```shell
-git clone https://github.com/bitelgeuse/tanal.git
-cd tanal
+git clone https://github.com/bitelgeuse/banal.git
+cd banal
 python setup.py
 ```
 
