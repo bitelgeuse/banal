@@ -7,11 +7,21 @@ default_palette = {
     "secondaryBackgroundColor": "#302e38",
 }
 palette = default_palette
-os.system(
-    f'./venv/bin/streamlit run \
-    --theme.primaryColor={palette["primaryColor"]}\
-    --theme.textColor={palette["textColor"]}\
-    --theme.backgroundColor={palette["backgroundColor"]}\
-    --theme.secondaryBackgroundColor={palette["secondaryBackgroundColor"]}\
-    web.py'
-)
+if os.name == "nt":
+    os.system(
+        f'{os.path.join("venv", "Scripts", "streamlit.exe")} run \
+        --theme.primaryColor={palette["primaryColor"]}\
+        --theme.textColor={palette["textColor"]}\
+        --theme.backgroundColor={palette["backgroundColor"]}\
+        --theme.secondaryBackgroundColor={palette["secondaryBackgroundColor"]}\
+        web.py'
+    )
+else:
+    os.system(
+        f'{os.path.join("venv", "bin", "streamlit")} run \
+        --theme.primaryColor={palette["primaryColor"]}\
+        --theme.textColor={palette["textColor"]}\
+        --theme.backgroundColor={palette["backgroundColor"]}\
+        --theme.secondaryBackgroundColor={palette["secondaryBackgroundColor"]}\
+        web.py'
+    )

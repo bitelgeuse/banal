@@ -81,7 +81,7 @@ def write_sidebar(tempos):
             help="Trim leading/trailing beats with weak onsets.",
             key="trim",
         )
-        st.sidebar.header("Advanced")
+        st.sidebar.header("Advance")
         st.sidebar.toggle(
             "Auto Start BPM",
             help="Auto guess of the initial BPM",
