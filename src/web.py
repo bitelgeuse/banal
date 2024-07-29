@@ -57,7 +57,7 @@ def create_tempos(
 
 def write_sidebar(tempos):
     if tempos is not None:
-        st.sidebar.header("Parameters Of Dynamic Tempo")
+        st.sidebar.header("Parameters Of BPM Dynamic")
         st.sidebar.header("Base")
         st.sidebar.number_input(
             "Start (in seconds)",
@@ -100,21 +100,21 @@ def write_sidebar(tempos):
         st.sidebar.number_input(
             "Standard BPM",
             value=1.0,
-            help="float > 0: Standard bpm is the standard deviation of the tempo estimator. Sensitivity of bpm.",
+            help="float > 0: Standard bpm is the standard deviation of the BPM estimator. Sensitivity of bpm.",
             step=1.0,
             key="std_bpm",
         )
         st.sidebar.number_input(
             "Max BPM",
             value=320.0,
-            help="float > 0: If provided, only estimate tempo below this threshold",
+            help="float > 0: If provided, only estimate BPM below this threshold",
             step=10.0,
             key="max_bpm",
         )
         st.sidebar.number_input(
             "Tightness",
             value=100.0,
-            help="float: Tightness of beat distribution around tempo. Sensitivity to tempo changes.",
+            help="float: Tightness of beat distribution around BPM. Sensitivity to BPM changes.",
             step=100.0,
             key="tightness",
         )
@@ -138,11 +138,11 @@ def write_sidebar(tempos):
             step=1.0,
             key="ac_size",
         )
-        st.sidebar.header("Song")
+        st.sidebar.header("Music")
         st.sidebar.slider(
-            "Song Volume",
+            "Volume",
             value=20,
-            help="Volume of original song regarding the beats.",
+            help="Volume of original music regarding the beats.",
             key="song_volume",
         )
         st.sidebar.number_input(
@@ -163,7 +163,7 @@ def write_sidebar(tempos):
 def write_tempos(tempos):
     with st.container(border=True):
         st.file_uploader(
-            "Choose an audio file",
+            "Choose An Audio File",
             type=["wav", "mp3", "flac", "ogg", "m4a", "wma", "aiff", "aif"],
             key="uploaded",
         )
@@ -185,7 +185,7 @@ def write_tempos(tempos):
                 data,
                 x="x",
                 y="y",
-                title="Tempo Dynamic",
+                title="BPM Dynamic",
                 labels={"x": "Time (s)", "y": "BPM"},
             )
             fig.update_traces(line=dict(color="#d85791"))
@@ -193,14 +193,14 @@ def write_tempos(tempos):
         with st.container(border=True):
             col1, col2 = st.columns(2)
             with col1:
-                data = {"Times": [], "Dynamic BPM": []}
+                data = {"Time": [], "BPM": []}
                 for start, end, tempo in tempos.segmentize():
-                    data["Times"] += [f"{start:.3f} - {end:.3f}".replace(".", ",")]
-                    data["Dynamic BPM"] += [round(tempo, 2)]
+                    data["Time"] += [f"{start:.3f} - {end:.3f}".replace(".", ",")]
+                    data["BPM"] += [round(tempo, 2)]
                 st.table(data)
             with col2:
                 data = {
-                    "Offset": (
+                    "Time": (
                         str(round(tempos.beat_times[0] + tempos.start, 3)).replace(
                             ".", ","
                         ),
@@ -211,7 +211,7 @@ def write_tempos(tempos):
 
 
 st.set_page_config(
-    page_title="Tanal",
+    page_title="Banal",
     page_icon=":musical_note:",
     layout="wide",
     initial_sidebar_state="expanded",
