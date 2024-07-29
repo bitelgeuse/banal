@@ -5,3 +5,4 @@ test_rust
 venv
 poetry.lock
 pyproject.toml
+build-binary/

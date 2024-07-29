@@ -14,7 +14,7 @@ if os.name == "nt":
         --theme.textColor={palette["textColor"]}\
         --theme.backgroundColor={palette["backgroundColor"]}\
         --theme.secondaryBackgroundColor={palette["secondaryBackgroundColor"]}\
-        web.py'
+         {os.path.join("src", "web.py")}'
     )
 else:
     os.system(
@@ -23,5 +23,5 @@ else:
         --theme.textColor={palette["textColor"]}\
         --theme.backgroundColor={palette["backgroundColor"]}\
         --theme.secondaryBackgroundColor={palette["secondaryBackgroundColor"]}\
-        web.py'
+        {os.path.join("src", "web.py")}'
     )
