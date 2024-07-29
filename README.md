@@ -1,6 +1,7 @@
 <div align="center">
   <img src="assets/logo.png" alt="Banal logo" width="50%">
 </div>
+
 # Banal - 🎶 BPM Analyzer
 Banal provides a web interface to analyze BPM
 ## Requirements
