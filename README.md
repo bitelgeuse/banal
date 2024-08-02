@@ -34,3 +34,7 @@ python run.py
 * The first run may be a bit slow due to caching.
 * The "Auto Correlation Window" parameter over 50 requires a LOT of memory.
 * The "Hop Length" parameter less 100 requires a LOT of memory.
+
+## Roadmap
+* Create binaries
+* Rewrite some parts of app to get more performance 
