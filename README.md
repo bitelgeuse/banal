@@ -32,8 +32,8 @@ python run.py
 
 ## Remarks
 * The first run may be a bit slow due to caching.
-* The "Auto Correlation Window" parameter over 50 requires a LOT of memory.
-* The "Hop Length" parameter less 100 requires a LOT of memory.
+* The "Auto Correlation Window" parameter over 50 requires a LOT of RAM.
+* The "Hop Length" parameter less 100 requires a LOT of RAM.
 
 ## Roadmap
 * Create binaries
