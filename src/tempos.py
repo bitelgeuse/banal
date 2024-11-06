@@ -73,7 +73,7 @@ class Tempos:
 
     def segmentize(self):
         segments = []
-        start = self.beat_times[0]
+        start = self.tempo_times[0]
         curr_tempo = self.tempo_dynamic[0]
         for time, tempo in zip(self.tempo_times[1:], self.tempo_dynamic[1:]):
             if round(curr_tempo, 2) != round(tempo, 2):
